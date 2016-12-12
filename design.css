@@ -1,0 +1,535 @@
+/* CSS Document */
+
+html,body{
+	margin: 0px 0 0 0;
+	padding: 0 0 0 0;
+	height: 100%;
+	width:100%;
+	min-width:100%;
+	
+}
+
+button{
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+input, textarea, select{
+	margin: 0;
+	padding 10px 10px 10px 10px;
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;	
+	
+}
+/*上端のメニューライン*/
+ul.upmenuline {
+	margin-top: 10px;
+	margin-left: auto;
+	width: 620px;
+	padding: 0;
+	font-size: 0px;
+}
+
+ul.upmenuline li {
+	width: auto;
+	display: inline-block;
+	text-align: center;
+	font-size: 16px;
+}
+
+ul.upmenuline li:first-child {
+  height:60px;
+}
+
+ul.upmenuline li a {
+  display: block;
+}
+
+/*中央メニューのスクロール*/
+.scr{
+	overflow-y: scroll;
+	overflow-x: hidden;
+	min-width: 100%;
+	height: 80%;
+	padding:0 0 0 0;
+	
+	
+}
+
+div#alart{
+	width:250px;
+	height:100px;
+	left:50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	position:fixed;
+	z-index:1000;
+	opacity: 0;
+	background-color:#FFF;
+	/* box-shadow */
+	box-shadow: 0px 1px 20px -7px #91a88d;
+	-moz-box-shadow: 0px 1px 20px -7px #91a88d;
+	-webkit-box-shadow: 0px 1px 20px -7px #91a88d;
+	
+}
+
+div#alart p{
+	margin-left: 30px;
+	margin-top: 40px;
+	padding-top: 0;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	color: #333;
+	
+}
+
+div#alart_blank{
+	width:250px;
+	height:100px;
+	left:50%;
+	top:200px;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	position:fixed;
+	z-index:1000;
+	opacity: 0;
+	background-color:#FFF;
+	/* box-shadow */
+	box-shadow: 0px 1px 20px -7px #91a88d;
+	-moz-box-shadow: 0px 1px 20px -7px #91a88d;
+	-webkit-box-shadow: 0px 1px 20px -7px #91a88d;
+	
+}
+
+div#alart_blank p{
+	margin-left: 65px;
+	margin-top: 40px;
+	padding-top: 0;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	color: #333;
+	
+}
+button#sampleButton{
+	margin: 100 100 0 0;
+	position:fixed;
+	width: 100px;
+	height:100px;
+	background-color:#096;
+	z-index:1100;
+	
+}
+p.resizeimage img{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 0px;
+	right: 0;
+	z-index: 0;
+}
+
+div.upmenu {
+	height: 39px;
+	margin-top: 0;
+	left: 0;
+	margin: 0;
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+	background-color: #B1B2B2;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	color: #FFF;
+	text-align: right;
+	border: medium solid #B1B2B2;
+	margin-right: 20px;
+	 
+	
+}
+
+div.main {
+	height: 100%;
+	width: 100%;
+	border-width: medium;
+	border-style: none;
+	background-image: url(background.png);
+	padding-top: 0px;
+	padding-right: 0;
+	padding-bottom: 0px;
+	padding-left: 0;
+	margin-top: 39px;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	position: relative;
+	background-repeat: repeat;
+	background-attachment: fixed;	
+	border-width: thin;
+	border-color: #999999;
+	border-style: ridge;
+}
+div.alignmenu{
+	position: absolute;
+	height: 100%;
+	width: 1000px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	
+}
+div.leftMenu {
+	position: fixed;
+	left: 0px;
+	width: 170px;
+	border-width: medium;
+	border-style: none;
+	top: 45px;
+	height: 100%;
+	text-align: center;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size: 16px;
+	color: #8E8E8E;
+	
+}
+
+div.centerMenu {
+	margin-left: 164px;
+	width: 656px;
+	border-width: medium;
+	border-style: none;
+	height: 100%;
+	margin-top: 0px;
+	background-color: #B6BAD3;
+	
+}
+div.centerMenu.form{
+	width : 100%;
+	
+
+	margin-left = 0px;
+	margin-top = 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	
+	
+}
+div.rightMenu {
+	position: fixed;
+	margin-left: 863px;
+	width: 146px;
+	border-width: medium;
+	border-color: #00CC33;
+	border-style: solid;
+	height: 100%;
+	
+}
+div.charspace {
+	 z-index: 100;
+	 position: fixed;
+	 bottom: 0;
+	 right: 0;
+	 height: 256px;
+	 width: 256px;
+	 background-color: #999;
+	 border: 2px red;
+	 text-align: right;
+}
+
+div.icon{
+	margin-top: 37px;
+	line-height: normal;
+	
+	
+}
+
+.button{
+	
+}
+.button:hover{
+	opacity:0.4;	
+	
+}
+.button:active{
+	opacity:0.7;	
+	
+}
+
+div#usertl{
+	margin-top:0;
+	color: #FFF;
+	height: 100%;
+}
+div#alltl{
+	margin-top:0;
+	color: #0C3;
+	height: 100%;
+	
+	
+}
+
+
+/* 以下thread。書き込み内容のCSS */
+
+div.thread{
+	position:relative;
+	width:656px;
+	height:222px;
+	background-color: #FFF;
+/* box-shadow */
+box-shadow:0px 1px 20px -7px #91a88d;
+-moz-box-shadow:0px 1px 20px -7px #91a88d;
+-webkit-box-shadow:0px 1px 20px -7px #91a88d;
+
+
+
+/* border */
+
+}
+
+
+div.article{
+	margin-left:17px;
+	margin-top:17px;
+	margin-bottom:17px;
+	position: absolute;
+	left: 0px;
+	width: 487px;
+	height: 187px;
+	
+}
+div.name{
+	height: 20pt;
+	margin-left: 7px;
+	margin-top: 7px;
+	position: absolute;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: normal;
+	color: #666;
+	text-transform: lowercase;
+	
+}
+
+div.tags{
+	height: 20pt;
+	margin-left: 113px;
+	margin-right: 17px;
+	margin-top: 7px;
+	position: static;
+	bottom: 0;
+	font-size: 12px;
+	color: #0C6;
+	text-align:right;
+	
+}
+div.text{
+	width: 470px;
+	height: 131px;
+	margin-left: 5px;
+	margin-top: 17px;
+	position: absolute;
+	word-wrap: break-word;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #666;
+	
+}
+div.date{
+	margin-left:504px;
+	margin-top:17px;
+	position: absolute;
+	width: 136px;
+	height: 187px;
+	
+}
+div.day{
+	margin-top: 51px;
+	margin-left:16px;
+	height:78px;
+	width: 108px;
+}
+div.dow{
+	position:relative;
+	margin-top: 5px;
+	margin-left: 16px;
+	height: 15px;
+	width: 108px;
+	
+}
+div.dow span{
+	width: 100%;
+	height:100%;
+	position: absolute;
+	top:50%;
+	margin-top: -0.4rem;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	font-size: 10px;
+	
+}
+div.day img{
+	margin-left: 10px;	
+	position:absolute;
+}
+div.month{
+	margin-top: -5px;
+	margin-left: 3px;
+	position: absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	font-size: 25pt;
+	
+}
+
+div.detailday{
+	margin-top: 17px;
+	margin-left: 50px;
+	position: absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	font-size: 40pt;
+	
+}
+
+
+
+/* 以下form。書き込む場所のCSS */
+
+div.form{
+	position: relative;
+	width: 656px;
+	height: 137px;
+	background-color: #FFF;
+	/* box-shadow */
+	box-shadow: 0px 1px 20px -7px #91a88d;
+	-moz-box-shadow: 0px 1px 20px -7px #91a88d;
+	-webkit-box-shadow: 0px 1px 20px -7px #91a88d;
+
+/* border */
+	
+}
+div.textbox{
+	margin-left: 17px;
+	margin-top: 12px;
+	margin-bottom: 17px;
+	position: absolute;
+	left: 0px;
+	width: 478px;
+	height: 110px;
+	border-width: thin;
+	border-color: #999999;
+	border-style: ridge;
+	
+}
+
+textarea.textbox{
+	margin-left: 17px;
+	margin-top: 12px;
+	margin-bottom: 17px;
+	position: absolute;
+	left: 0px;
+	width: 478px;
+	height: 110px;
+	border-width: thin;
+	border-color: #999999;
+	border-style: ridge;
+	resize: none;
+
+
+	background:: url(introduction.png) center center no-repeat;
+	border: 1px solid #888;
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+}
+div.sidebox{
+	margin-left: 518px;
+	margin-bottom: 17px;
+	position: relative;
+	left: 0px;
+	width: 122px;
+	height: 111px;
+	top: 12px;
+	
+}
+
+div.sidebox.date{
+	width: 122px;
+	height: 45px;
+	position: absolute;
+	top: -18px;
+	left: -519px;
+	
+	
+}
+
+div.sidebox.date img{
+	margin-left: 5px;
+	top: 11px;
+	margin-top: -10px;
+	
+}
+div.sidebox.date.week{
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	left: -442px;
+	
+	
+	
+}
+div.sidebox.date.month{
+	top: 3px;
+	left: -519px;
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	font-size: 15pt;
+	
+	
+	
+}
+div.sidebox.date.day{
+	top: -80px;
+	left: -486px;
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	font-size: 25pt;
+	
+	
+	
+}
+
+div.sidebox.date.week span{
+	width: 100%;
+	height:100%;
+	position: absolute;
+	top:50%;
+	margin-top: -0.4rem;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	font-size: 10px;
+	
+}
+div.sidebox img{
+	position:absolute;
+	bottom:0;
+	
+	
+}

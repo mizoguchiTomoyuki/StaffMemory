@@ -1,0 +1,349 @@
+/* CSS Document */
+
+html,body{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	height: 100%;
+	width:100%;
+	min-width:100%;
+	background-image: none;
+	
+	
+}
+
+button{
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+input, textarea, select{
+	margin: 0;
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;	
+	
+}
+
+div.main{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-image: url(background.png);
+	background-repeat: repeat;
+	
+	
+}
+
+div.main.align{
+	position:absolute;
+	width:1000px;
+	height:100%;
+	left:50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	background-image: none;
+	
+}
+
+.logo{
+	position:absolute;
+	top:50%;
+	left: 10%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	
+}
+
+.loginform{
+	position:absolute;
+	margin-left: 700px;
+	width: 374px;
+	height: 329px;
+	border-width: thin;
+	border-color: #999999;
+	border-style: none;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	z-index:10;
+	
+}
+.loginform img{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	top: 0;
+	left: 0;
+	
+}
+
+.form{
+	margin-top: -246px;
+	border-width: thin;
+	border-color: #999999;
+	border-style: none;
+	z-index: 100;
+	
+	
+}
+
+.form p{
+	margin-left: 30px;
+	margin-bottom: 8px;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	color: #333;
+	font-size: 10px;
+	
+}
+
+.form input{
+	border: 0;
+	padding: 2px;
+	font-size: 1.1em;
+	font-family: Arial, sans-serif;
+	color: #aaa;
+	border: solid 1px #ccc;
+	margin: 0 0 5px;
+	margin-left: 30px;
+	width: 306px;
+	
+}
+
+.form input#loginbutton{
+position: absolute;
+margin-top:24px;
+left:auto;
+right:28px;
+width:auto;
+border-style: none;
+	
+}
+
+
+
+
+/*登録フォーム用のものまとめたい*/
+
+.regiform{
+	position:absolute;
+	left:50%;
+	width: 374px;
+	height: 329px;
+	border-width: thin;
+	border-color: #999999;
+	border-style: none;
+	top: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform:translateX(-50%) translateY(-50%);
+	z-index:10;
+	
+}
+.regiform img{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	top: 0;
+	left: 0;
+	
+}
+
+.registform{
+	margin-top: -268px;
+	border-width: thin;
+	border-color: #999999;
+	border-style: none;
+	z-index: 100;
+	
+	
+}
+
+.registform p{
+	margin-left: 30px;
+	margin-bottom: 1px;
+	margin-top:16px;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	color: #333;
+	font-size: 10px;
+	
+}
+
+.registform input{
+	border: 0;
+	padding: 2px;
+	font-size: 1.1em;
+	font-family: Arial, sans-serif;
+	color: #aaa;
+	border: solid 1px #ccc;
+	margin: 0 0 3px;
+	margin-left: 30px;
+	width: 306px;
+	
+}
+
+
+
+.registform input#confirmbutton{
+position: absolute;
+margin-top:0px;
+margin-bottom: 40px;
+left:auto;
+right:28px;
+width:auto;
+border-style: none;
+	
+}
+
+.registform.buttons{
+position: absolute;
+margin-top:0px;
+bottom:68px;
+left:auto;
+width:374px;
+
+border-style: none;
+	
+	
+}
+.registform.buttons a{
+position: absolute;
+margin:0;
+padding:0;
+left:auto;
+right:115px;
+width:auto;
+border-style: none;
+	
+	
+}
+.registform.buttons input{
+position: absolute;
+margin:0;
+padding:0;
+left:auto;
+right:29px;
+width:auto;
+border-style: none;
+	
+	
+}
+.registform.buttons a img#back{
+position: absolute;
+margin:0;
+padding:0;
+left:auto;
+right:25px;
+width:auto;
+border-style: none;
+	
+	
+}
+
+div#complete{
+	width:250px;
+	height:180px;
+	left:50%;
+	top:20%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	position:fixed;
+	z-index:1000;
+	opacity: 0;
+	background-color:#FFF;
+	/* box-shadow */
+	box-shadow: 0px 1px 20px -7px #91a88d;
+	-moz-box-shadow: 0px 1px 20px -7px #91a88d;
+	-webkit-box-shadow: 0px 1px 20px -7px #91a88d;
+	
+}
+
+div#complete p{
+	margin-left: 30px;
+	margin-top: 40px;
+	padding-top: 0;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	color: #333;
+	
+}
+
+div#error{
+	width:250px;
+	height:180px;
+	left:50%;
+	top:20%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	position:fixed;
+	z-index:1000;
+	opacity: 0;
+	background-color:#FFF;
+	/* box-shadow */
+	box-shadow: 0px 1px 20px -7px #91a88d;
+	-moz-box-shadow: 0px 1px 20px -7px #91a88d;
+	-webkit-box-shadow: 0px 1px 20px -7px #91a88d;
+	
+}
+
+
+div#error p{
+	margin-left: 30px;
+	margin-top: 40px;
+	padding-top: 0;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	color: #333;
+	
+}
+
+div.loginform.goregist{
+	position: absolute;
+	padding: 0;
+	margin:330px 0px 0px 0px;
+	left:auto;
+	right:-250px;
+	
+}
+
+div.logoutdialog{
+	width:250px;
+	height:180px;
+	left:50%;
+	top:20%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	position:fixed;
+	z-index:1000;
+	opacity: 1;
+	background-color:#FFF;
+	/* box-shadow */
+	box-shadow: 0px 1px 20px -7px #91a88d;
+	-moz-box-shadow: 0px 1px 20px -7px #91a88d;
+	-webkit-box-shadow: 0px 1px 20px -7px #91a88d;
+	
+	
+}
+
+div.logoutdialog p{
+	margin-left: 30px;
+	margin-top: 40px;
+	padding-top: 0;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	color: #333;
+	
+}
+
+div.logoutdialog a{
+	margin-left: 30px;
+	margin-top: 40px;
+	padding-top: 0;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	color: #333;
+	
+}
