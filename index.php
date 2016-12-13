@@ -13,7 +13,7 @@ require 'sqlClass.php';
 session_start();
 
 if(isset($_SESSION['username'])){
-	header('Location: ../index3.php');
+	header('Location: ../StaffMemory/index3.php');
 	exit;	
 }
 #このページからのサブミットに対応
@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			session_regenerate_id(true);
 			$_POST = array();
 			$_SESSION['userid'] = $table['id']; //ユーザーのidをidとしてセッションで渡す
-			header('Location: ../index3.php');
+			header('Location: ../StaffMemory/index3.php');
 			exit();
 		}else{
 			$error['login'] = 'failed';	

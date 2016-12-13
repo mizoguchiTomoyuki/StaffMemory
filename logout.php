@@ -25,7 +25,7 @@ session_start();
 	<div class="main align">
     	<div class="logoutdialog">
 			<p>ログアウトしました。</p>
-			<a href = "index.php" >トップページ</a>
+			<a href = "../StaffMemory/index.php" >トップページ</a>
     	</div>
 	</div>
 </div>

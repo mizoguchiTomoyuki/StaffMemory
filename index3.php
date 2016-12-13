@@ -17,14 +17,23 @@ document.getElementById('alltl').style.display = 'none';
 document.getElementById(tabname).style.display = 'block';
 	
 }
+function Changepage(pageindex,pagenum){
+	for(var i=0;i<pagenum;i++){
+		var str = "page_"+String(i);	
+		document.getElementById(str).style.display = 'none';
+	}
+		var str = "page_"+String(pageindex);	
+		document.getElementById(str).style.display = 'block';
+	
+}
 </script>
 
 
 </head>
 <?php
 if(!isset($_SESSION['userid'])){
-	header('Location: ../index.html');
-	exit;	
+//	header('Location: ../StaffMemory/index.php');
+//	exit;	
 }
 ?>
 <?php
@@ -65,6 +74,7 @@ EOM;
 	
 
 }
+
 ?>
 <body>
 <div id="alart">
@@ -74,6 +84,9 @@ EOM;
 <p>空白のままです</p>
 </div>
 <div class="upmenu">
+<div class="smalllogo">
+<img src="icondata/logo-mini.png" width="223" height="35" alt="logo" />
+</div>
 <ul class = "upmenuline">
 <li>ユーザー：<?php
   require_once "sqlClass.php";
@@ -143,7 +156,12 @@ require_once 'date_encode.php';
 require_once 'thread_view.php';
 	if(isset($_SESSION['userid'])){
 		$DATA['id'] = $_SESSION['userid'];	
-		threadViewFromUserId($_SESSION['userid']);
+		if(isset($_GET['usr_page_now'])){
+			$page = $_GET['usr_page_now'];
+			threadViewFromUserId($_SESSION['userid'],$page);
+		}else{
+			threadViewFromUserId($_SESSION['userid'],0);
+		}
 	}else{
 		echo '読み込み失敗';	
 	}
@@ -154,7 +172,12 @@ require_once 'thread_view.php';
 require_once 'date_encode.php';
 require_once 'thread_view.php';
 		$yesterday_date =  GetYesterday();
-		threadViewFromDate($yesterday_date);
+		if(isset($_GET['date_page_now'])){
+			$page = $_GET['date_page_now'];
+			threadViewFromDate($yesterday_date,$page);
+		}else{
+			threadViewFromDate($yesterday_date,0);
+		}
 		?>
         </div>
     </div>
@@ -163,10 +186,32 @@ require_once 'thread_view.php';
 </div>
 
 <div class="charspace">
-  <p>aaaa</p>
+<p class="comments" id="comments">
+<img src="icondata/comment.png" width="302" height="202" alt="コメント" />
+<span><?php 
+require_once 'operator.php';
+print<<<EOF
+<script>
+changeOpacity( 3, 0 ,'comments');
+changeOpacity( 3, 0 ,'uketsuke');
+</script>
+EOF;
+?></span>
+</p>
+  <p class="uketuske" id="uketsuke"><img src="icondata/uketuke2e.png" width="512" height="512" alt="うけつけ" /></p>
 </div>
 <script>
 ChangeTab('usertl');
 </script>
+<?php
+print <<< EOM
+
+<script>
+ChangeTab('usertl');
+</script>
+
+EOM;
+
+?>
 </body>
 </html>

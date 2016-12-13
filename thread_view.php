@@ -2,7 +2,9 @@
 require_once 'sqlClass.php';
 require_once 'date_encode.php';
 //指定したユーザーのIDから表示するthreadを検索する
-function threadviewFromUserId($userid){
+//pageでページ番号を指定
+function threadviewFromUserId($userid,$pageIndex){
+$id_Counter = 0;
 $mysql = new MySQLClass();
 $mysql->connect('localhost','testuser','testuser');
 $mysql->selectDatabase('service');
@@ -15,28 +17,86 @@ $qresult = $mysql->Query($query);
 	$query = sprintf('SELECT name FROM logindata where id = %s',
 				quote_smart($userid));
 	$userqresult = mysql_fetch_assoc($mysql->Query($query));
+$counter =0;
+$page = "page_";
 print<<<EOF
 	<div class="scr">
 EOF;
 
 while ($row = mysql_fetch_assoc($qresult)) {
- 
-	ThreadFormat($userqresult['name'],$row['date'],$row['article']);
- 
+ if($counter ==0){
+
+		echo '<div id='.$page.(string)$id_Counter.'>';
+	}
+	if($pageIndex==$id_Counter){
+		ThreadFormat($userqresult['name'],$row['date'],$row['article']);
+	}
+ if($counter ==0){
+
+		echo '</div>';
+	}
+	$counter++;
+	if($counter>10){
+	$counter = 0;	
+	$id_Counter++;
+	}
+
+
 }
+$_SESSION['usr_page'] = $id_Counter;
 print<<<EOF
 	</div>
+	<div class="pages">
 EOF;
+//ページ数の表示
+for($i=0;$i<$id_Counter+1;$i++){
+$FormName = 'usr_page'.(string)$i;
+$clickPage = 'document.usr_page'.(string)$i.'.submit()';
+//フォーム部分---------
+print<<<EOF
+<form method="get" action="index3.php" name=$FormName>
+		<input type="hidden" name="usr_page_now" value=$i>
+		<input type="hidden" name="usr_page" value=$id_Counter>
+</form>
+EOF;
+//---------------------
+
+//ページインデックス---------
+	if(isset($_GET['usr_page_now'])){
+		if($i == $_GET['usr_page_now']){
+			echo '<span>['.(string)$i.']</span>';
+		}else{
+			$clickPage = 'document.usr_page'.(string)$i.'.submit()';
+print<<<EOF
+		<span><a href="#" onclick=$clickPage>[$i]  </a></span>
+EOF;
+		}
+	}else{
+		if($i == 0){
+			echo '<span>['.(string)$i.']</span>';
+		}else{
+			$clickPage = 'document.usr_page'.(string)$i.'.submit()';
+print<<<EOF
+			<span><a href="#" onclick=$clickPage>[$i]   </a></span>
+EOF;
+		}
+	}
+
+//--------------------------
+}
+print '</div>';
 $mysql->disconnect();
 unset($mysql);
 
 }
+
 //指定した日付のthreadを検索表示する
-function threadviewFromDate($date){
+function threadviewFromDate($date,$pageIndex){
 $mysql = new MySQLClass();
 $mysql->connect('localhost','testuser','testuser');
 $mysql->selectDatabase('service');
 mysql_set_charset('utf8');
+$Date_Counter = 0;
 
 $year = '2001';
 $month = '01';
@@ -47,23 +107,76 @@ $query = sprintf('SELECT * FROM thread where YEAR(date)=%s AND MONTH(date) = %s 
 				quote_smart($month),
 				quote_smart($day));
 $qresult = $mysql->Query($query);
-
+$counter =0;
+$page = "page_";
 print<<<EOF
 	<div class="scr">
 EOF;
 while ($row = mysql_fetch_assoc($qresult)) {
+	if($counter ==0){
+
+		echo '<div id='.$page.(string)$counter.'>';
+	}
 	//周回中に探す
 	$query = sprintf('SELECT name FROM logindata where id =  %s',
 				quote_smart($row['userid']));
 	$userqresult =mysql_fetch_assoc( $mysql->Query($query));
-	
-	ThreadFormat($userqresult['name'],$row['date'],$row['article']);
+	if($pageIndex == $Date_Counter){
+		ThreadFormat($userqresult['name'],$row['date'],$row['article']);
+	}
+	if($counter ==0){
 
+		echo '</div>';
+	}
+	if($counter>10){
+	$counter = 0;	
+	$Date_Counter++;
+	}
+
+
+	$counter++;
 }
+$_SESSION['date_page'] = $Date_Counter;//セッションに全体のページ数を表示
 
 print<<<EOF
 	</div>
+	<div class="pages">
 EOF;
+
+for($i=0;$i<$Date_Counter+1;$i++){
+$FormName = 'date_page'.(string)$i;
+$clickPage = 'document.usr_page'.(string)$i.'.submit()';
+//フォーム部分---------
+print<<<EOF
+		<form method="get" action="index3.php" name=$FormName>
+		<input type="hidden" name="date_page_now" value=$i>
+		<input type="hidden" name="date_page" value=$Date_Counter>
+</form>
+EOF;
+//---------------------
+
+//ページインデックス---------
+	if(isset($_GET['date_page_now'])){
+		if($i == $_GET['date_page_now']){
+			echo '<span>['.(string)$i.']</span>';
+		}else{
+print<<<EOF
+		<span><a href="#" onclick=$clickPage>[$i]   </a></span>
+EOF;
+		}
+	}else{
+		if($i == 0){
+			echo '<span>['.(string)$i.']</span>';
+		}else{
+print<<<EOF
+			<span><a href="#" onclick=$clickPage>[$i]   </a></span>
+EOF;
+		}
+	}
+
+//--------------------------
+}
+echo '</div>';
 $mysql->disconnect();
 unset($mysql);
 
@@ -138,4 +251,7 @@ print<<< EOF
  </div>
 EOF;
 }
+
+function getidCount(){return $id_Counter;}
+function getdateCount(){return $Date_Counter;}
 ?>
