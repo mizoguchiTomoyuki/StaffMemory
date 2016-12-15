@@ -1,0 +1,30 @@
+データベース詳細
+//ログイン承認用テーブル
+Create table logindata(
+`id` INT NOT NULL AUTO_INCREMENT,
+`name` VARCHAR(30) NOT NULL,
+`mail` VARCHAR(255) NOT NULL,
+`pass` VARCHAR(255) NOT NULL,
+PRIMARY KEY(`id`)
+);
+//書き込みのデータテーブル
+Create table thread(
+`id` INT NOT NULL AUTO_INCREMENT,
+`article` VARCHAR(255) NOT NULL,
+`date` datetime NOT NULL,
+`userid` INT NOT NULL,
+PRIMARY KEY(`id`)
+);
+//TagIDとどのスレッドが結びついているか(未実装)
+Create table taginfo(
+`id` INT NOT NULL AUTO_INCREMENT,
+`threadid` INT NOT NULL,
+`tagid` INT NOT NULL,
+PRIMARY KEY(`id`)
+);
+//Tag名称とtagIDの関連付け(未実装)
+Create table tagtable(
+`id` INT NOT NULL AUTO_INCREMENT,
+`name` VARCHAR(30) NOT NULL,
+PRIMARY KEY(`id`)
+);
