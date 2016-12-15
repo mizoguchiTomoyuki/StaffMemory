@@ -185,21 +185,6 @@ require_once 'thread_view.php';
 
 </div>
 
-<div class="charspace">
-<p class="comments" id="comments">
-<img src="icondata/comment.png" width="302" height="202" alt="コメント" />
-<span><?php 
-require_once 'operator.php';
-print<<<EOF
-<script>
-changeOpacity( 3, 0 ,'comments');
-changeOpacity( 3, 0 ,'uketsuke');
-</script>
-EOF;
-?></span>
-</p>
-  <p class="uketuske" id="uketsuke"><img src="icondata/uketuke2e.png" width="512" height="512" alt="うけつけ" /></p>
-</div>
 <script>
 ChangeTab('usertl');
 </script>
